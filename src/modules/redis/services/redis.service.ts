@@ -46,6 +46,8 @@ export class RedisService implements IRedisService {
       await this.storage.connect();
     }
 
+    await this.storage.config('set', 'maxclients', this.config.maxClients);
+
     return;
   }
 

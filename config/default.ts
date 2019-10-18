@@ -6,6 +6,7 @@ export const config = {
   redis: {
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT,
+    maxClients: process.env.REDIS_MAX_CLIENTS,
   },
   cache: {
     ttl: process.env.CACHE_TTL,

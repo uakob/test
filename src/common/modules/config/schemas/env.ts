@@ -15,7 +15,9 @@ export const env: Joi.ObjectSchema = Joi.object({
   REDIS_HOST: Joi.any()
     .required(),
   REDIS_PORT: Joi.number()
-    .optional(),
+    .required(),
+  REDIS_MAX_CLIENTS: Joi.number()
+    .required(),
   CACHE_TTL: Joi.number()
     .required(),
   CACHE_MAX: Joi.number()

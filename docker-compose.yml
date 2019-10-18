@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  redis_proxy:
+    container_name: 'redis_proxy'
+    build: .
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    networks:
+      - local
+
+  redis:
+    container_name: 'redis'
+    image: redis:latest
+    env_file:
+      - .env
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}"
+    restart: on-failure
+    networks:
+      - local
+
+networks:
+  local:

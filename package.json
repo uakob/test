@@ -1,0 +1,56 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "app/bootstrap.js",
+  "scripts": {
+    "debug": "nodemon",
+    "start": "node app/bootstrap.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "./node_modules/mocha/bin/mocha",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json 'src/**/*.ts'"
+  },
+  "keywords": [
+    "test"
+  ],
+  "engines": {
+    "node": "12.1.0"
+  },
+  "private": true,
+  "author": "timofej.sidorov@goods.ru",
+  "dependencies": {
+    "@nestjs/common": "6.8.3",
+    "@nestjs/core": "6.8.3",
+    "@nestjs/platform-fastify": "6.8.3",
+    "config": "3.2.3",
+    "dotenv": "8.2.0",
+    "joi": "14.3.1",
+    "lodash": "4.17.15",
+    "lowdb": "1.0.0",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.5.3",
+    "uuid": "3.3.3",
+    "ioredis": "4.14.1",
+    "cache-manager": "2.10.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "6.1.1",
+    "@types/node": "12.11.1",
+    "@types/lodash": "4.14.144",
+    "@types/uuid": "3.4.5",
+    "@types/joi": "14.3.3",
+    "@types/config": "0.0.34",
+    "@types/ioredis": "4.0.18",
+    "@types/lowdb": "1.0.9",
+    "nodemon": "1.19.4",
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "mocha": "6.2.1",
+    "sinon": "7.5.0",
+    "tslint": "5.20.0",
+    "tslint-config-airbnb": "5.11.2",
+    "ts-node": "8.4.1",
+    "tsconfig-paths": "3.9.0",
+    "typescript": "3.6.4"
+  }
+}

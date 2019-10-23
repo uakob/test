@@ -18,6 +18,9 @@ import {
   AppModule,
 } from './modules';
 
+// TODO implement custom after interceptor with key-value storage that stores exactly key requested and number of current clients waiting for job finish
+// TODO implement custom before interceptor like above
+// NOTE or combine into one (it's rx already)
 export async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,

@@ -1,0 +1,19 @@
+# limit_conn_zone binary_remote_addr  zone=perip:10m;
+# limit_conn_zone server_name zone=perserver:10m;
+
+upstream ${APP_HOST} {
+  server ${APP_HOST}:${APP_PORT} max_conns=${APP_MAX_CONN};
+}
+
+server {
+    listen ${WEB_PORT};
+    listen [::]:${WEB_PORT};
+
+    location / {
+      # limit_conn perserver ${APP_MAX_CONN};
+      # limit_conn perip 1;
+
+      proxy_pass http://${APP_HOST};
+    }
+
+  }

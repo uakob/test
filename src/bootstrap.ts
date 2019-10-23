@@ -37,22 +37,14 @@ export async function bootstrap() {
       .get(DI_CONSTANTS.IRedisService)
       .init();
 
-    const port = await app
+    const { port } = await app
       .select(AppModule)
       .get(COMMON_DI_CONSTANTS.IConfig)
-      .get('app.port');
+      .get('app');
 
-    const host = await app
-      .select(AppModule)
-      .get(COMMON_DI_CONSTANTS.IConfig)
-      .get('app.host');
+    console.log(JSON.stringify({ app_port: port }));
 
-    console.log(JSON.stringify({
-      host,
-      port,
-    }));
-
-    await app.listen(port, host);
+    await app.listen(port, '0.0.0.0');
   } catch (error) {
     throw error;
   }

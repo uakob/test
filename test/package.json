@@ -1,0 +1,25 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "app/bootstrap.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "keywords": [
+    "test"
+  ],
+  "engines": {
+    "node": "12.1.0"
+  },
+  "private": true,
+  "author": "uakob@ya.ru",
+  "dependencies": {
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "mocha": "6.2.2",
+    "sinon": "7.5.0",
+    "ioredis": "4.14.1"
+  },
+  "devDependencies": {}
+}

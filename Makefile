@@ -1,6 +1,10 @@
 start: ## run using env
 	cp .env.example .env
-	docker-compose -f docker-compose.yml up --build --force-recreate --remove-orphans
+	docker-compose -f docker-compose.yml up --build --force-recreate --remove-orphans redis redis_proxy nginx
+
+e2e: ## test using different container
+	cp .env.example .env
+	docker-compose -f docker-compose.yml up --build --force-recreate --remove-orphans test
 
 build: ## build docker image
 	docker build . --no-cache --tag=test

@@ -54,4 +54,8 @@ export class RedisService implements IRedisService {
   public async get(key: Redis.KeyType): Promise<any> {
     return this.storage.get(key);
   }
+
+  public async set(key: Redis.KeyType, value: any): Promise<any> {
+    return this.storage.set(key, value);
+  }
 }

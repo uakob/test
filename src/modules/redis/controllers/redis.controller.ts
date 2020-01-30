@@ -2,7 +2,9 @@ import {
   Controller,
   Inject,
   Get,
+  Post,
   Param,
+  Body,
   UseInterceptors,
   CacheInterceptor,
 } from '@nestjs/common';
@@ -36,5 +38,13 @@ export class RedisController {
       @Param('key') key: string,
     ) {
       return this.redisService.get(key);
+    }
+
+    @Post('/:key')
+    public async post(
+      @Param('key') key: string,
+      @Body() dto: { value: any },
+    ) {
+      return this.redisService.set(key, dto.value);
     }
   }
